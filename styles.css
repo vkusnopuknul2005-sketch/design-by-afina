@@ -68,6 +68,26 @@ button {
   gap: 8px;
 }
 
+.site-header {
+  animation: headerFade 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes headerFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  opacity: 0;
+  animation: logoFade 0.9s ease 0.3s forwards;
+}
+
+@keyframes logoFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .section-header h2 {
   font-size: 28px;
   font-weight: 600;
@@ -203,7 +223,7 @@ button {
 
 .btn-primary:hover {
   background: #000000;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -213,7 +233,7 @@ button {
 
 .btn-secondary:hover {
   background: #e4e4e4;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 /* HERO card */
@@ -508,4 +528,25 @@ button {
     gap: 6px;
     align-items: flex-start;
   }
+}
+
+/* ANIMATIONS */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover,
+.project-card:hover,
+.step-card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
 }

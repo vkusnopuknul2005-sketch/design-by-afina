@@ -11,6 +11,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
+
+<script>
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -28,9 +43,9 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero fade-in">
       <div class="container hero-inner">
-        <div class="hero-text">
+        <div class="hero-text fade-in">
           <p class="hero-eyebrow">Портфолио · 2025</p>
           <h1>Афина — начинающий дизайнер с чувством минимализма.</h1>
           <p class="hero-subtitle">
@@ -44,7 +59,7 @@
             </button>
           </div>
         </div>
-        <div class="hero-card">
+        <div class="hero-card fade-in">
           <div class="hero-tag">Открыта для стажировок и небольших проектов</div>
           <div class="hero-avatar">
             <div class="avatar-circle">A</div>
@@ -83,7 +98,7 @@
           <p>Направления дизайна, которые ей интересны и в которых она хочет развиваться.</p>
         </div>
         <div class="cards-grid">
-          <article class="card">
+          <article class="card fade-in">
             <h3>Визуальный дизайн</h3>
             <p>
               Чистые макеты для постеров, обложек, простых лендингов и соцсетей. Гармония типографики,
